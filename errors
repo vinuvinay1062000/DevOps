@@ -228,5 +228,60 @@ answer:  sudo lsof -t -i tcp:5432 -s tcp:listen | sudo xargs kill
 
 answer : bin/rails db:migrate RAILS_ENV=production\n\n
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Setting up jenkins (2.375.3) ...
+Job for jenkins.service failed because the control process exited with error code.
+See "systemctl status jenkins.service" and "journalctl -xe" for details.
+invoke-rc.d: initscript jenkins, action "start" failed.
+● jenkins.service - Jenkins Continuous Integration Server
+     Loaded: loaded (/lib/systemd/system/jenkins.service; enabled; vendor preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Sat 2023-02-25 12:10:26 IST; 4ms ago
+    Process: 81241 ExecStart=/usr/bin/jenkins (code=exited, status=1/FAILURE)
+   Main PID: 81241 (code=exited, status=1/FAILURE)
+
+Feb 25 12:10:26 vinay-Mi-NoteBook-14 systemd[1]: jenkins.service: Main process exited, code=exited, status=1/FAILURE
+Feb 25 12:10:26 vinay-Mi-NoteBook-14 systemd[1]: jenkins.service: Failed with result 'exit-code'.
+Feb 25 12:10:26 vinay-Mi-NoteBook-14 systemd[1]: Failed to start Jenkins Continuous Integration Server.
+Feb 25 12:10:27 vinay-Mi-NoteBook-14 jenkins[81241]: jenkins: /usr/share/java/jenkins.war is not a file
+Feb 25 12:10:27 vinay-Mi-NoteBook-14 systemd[1]: jenkins.service: Scheduled restart job, restart counter is at 1.
+Feb 25 12:10:27 vinay-Mi-NoteBook-14 systemd[1]: Stopped Jenkins Continuous Integration Server.
+Feb 25 12:10:27 vinay-Mi-NoteBook-14 systemd[1]: Starting Jenkins Continuous Integration Server...
+Feb 25 12:10:27 vinay-Mi-NoteBook-14 jenkins[81265]: jenkins: /usr/share/java/jenkins.war is not a file
+Feb 25 12:10:27 vinay-Mi-NoteBook-14 systemd[1]: jenkins.service: Main process exited, code=exited, status=1/FAILURE
+Feb 25 12:10:27 vinay-Mi-NoteBook-14 systemd[1]: jenkins.service: Failed with result 'exit-code'.
+Feb 25 12:10:27 vinay-Mi-NoteBook-14 systemd[1]: Failed to start Jenkins Continuous Integration Server.
+dpkg: error processing package jenkins (--configure):
+ installed jenkins package post-installation script subprocess returned error exit status 1
+Errors were encountered while processing:
+ jenkins
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+
+
+
+ANSWER == follow steps
+
+  sudo mv /var/lib/dpkg/info /var/lib/dpkg/info_silent
+  
+  sudo mkdir /var/lib/dpkg/info
+  
+  sudo apt-get update
+  
+  sudo apt-get -f install
+  
+  sudo mv /var/lib/dpkg/info/* /var/lib/dpkg/info_silent/
+  
+  sudo rm -rf /var/lib/dpkg/info
+  
+  sudo mv /var/lib/dpkg/info_silent /var/lib/dpkg/info
+
+  sudo apt-get update
+  
+  sudo apt upgrade
+  
+  
+  link: https://www.youtube.com/watch?v=HplpJ4JVrUM
+  
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 

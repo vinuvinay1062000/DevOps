@@ -3,7 +3,7 @@
    for restoring use screen mode (screen) ctrl +ad
                  
   *to check written code use --    https://www.yamllint.com/          
-   *docker inspect kreatio_network              
+   *docker inspect kreatio_	 network              
                  
     to chech the ssh key use " cd .ssh"   
      sudo kill -9 (pid-number)
