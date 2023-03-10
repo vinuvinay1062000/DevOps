@@ -59,7 +59,7 @@ docker container logs vinay
    rewrite  ^(.*)$ https://v2.blu-aie.ai;
 
    
-   ========================================================
+ 
    
    
    ==============================================
@@ -623,4 +623,295 @@ pg_restore: creating TABLE "public.ar_internal_metadata"
 pg_restore: creating TABLE "public.article_authors"
 pg_restore: creating TABLE "public.article_category_sites"
 
+================================================================================================================================================================================
 
+                                   AWS LEARNING
+                                   
+                                   
+   * AWs is cloud platform (Amazon web service).
+   * S3 (simple secured storage)
+   * EC2 (here we can use ubuntu or linux machine) (Elastic computing cloud)
+   
+   There are two kinds of modules in cloud computing 
+   1.Deployment models
+   2.Service modues
+   
+   
+   ! Deployment models
+   
+     . public cloud
+     . private cloud 
+     . Hybride cloud
+     
+     
+   2 Service modues
+     .Infrastruture as a service
+     .Platform as a service
+     .Software as a service
+ 
+ 
+ ===========================================GIT========================================================= 
+ 
+  youtube link : https://www.youtube.com/watch?v=vMdSqMf6BPY&list=PL_euSNU_eLbegnt7aR8I1gXfLhKZbxnYX
+  
+  ------------------------------------------------------------------------------------------------
+  what is git ?
+   
+   It is a distributed version control system (vcs). devolped by LINUS Torvalds this guy devolped the linux.
+   
+   * Basically vcs is the software designed to record changes made to the file overtime.
+   * Git gives us ability to revert the files or the set of files you made changes.
+   * Git not only records the souce code it also tracks the images, research papers or any types of files.
+   * we have three kinds of version control system
+      1.local version control system .
+      2. centrilized version control system.
+      3. Distributed version control system.
+      
+      
+     Local version control system 
+     
+     * many people use this method .
+     * this method is to copy files into another directory .
+     * they keep the files with the timestamp directory ( means save the file with date and time example: vinay_19/10/2022.txt)  
+     * it is very simple that we maintain the backup.
+     
+     Centralized version control system 
+     
+     * In order to collabrate with the other developer this method is devolped .
+     * This systems have a single server that have all versioned files and number of clintes can take the file from that central place.
+     * For many years this is the standard for version control.
+     * Cvs, Subversion and perforce are the examples of this method.
+     
+     Advantages of centralized vcs
+     
+     * this has advantages over local vcs.
+     * everyone can know what is going on the project .
+     * Administrators can have control that who can do what.
+     * everyone can get the project update immediately as all are linked to the one centralized sever.
+     
+     Disadvantages of cetnralized vcs
+     
+     * if the centralized server goes down for an hour , nobody can collaborate al all or save the canges to the centralized server.
+     * if the hard disk of  central database corrupted and proper backups have not been kept , you lose absulutely everything.
+     * local vcs suffer from this same problem , when ever you hav ethe entire history of the project in a single place , you risk losing everything.
+     
+     
+    Distributed version control system.
+    
+    * Clintes not only checkout the snapshots of files, they can also fully mirror the repository including its full history.
+    * In clients system also you can maintain the versions so that when the server is up you can fully copied back to the server.
+    * Every clone is a full backup of all the data.
+    
+   ------------------------------------------------------------------------------------------------------------------------------------------------- 
+    
+    How git works
+         
+  
+ * Compared to other vcs like subversion. Most operations in git requries local files and local resources to operate.
+  * if you are used to a centralized vcs where most operations have that network latency overhead,
+  
+  * For example , to browse the history of the project , git doesnt need to go out the server to get the history and display it for you.
+  * it simply reads it directly from your loacl datbase .
+  if you want to see the changes between the current working file and the file a month ago.
+  *git can look up the file a month ago and do a local differnce calculation.
+  
+  * There is no need to ask remote server to do it or pull an older version of the file from the remote sever to do it locally.
+  * This means you can do your work happiely until yoy get to a network connection to upload.
+  * In subversion and C vcs , you can edit files , but you can't commit changes to your database ( because your database is offline).
+  
+  
+  THREE STATES IN GIT
+  
+   git has three main stages that your working in file they are : modified , staged and commited.
+   
+   * modified means that you have changes the file but have not commited it to your database yet.
+   * Staged means that you have marked a modified file in its ciurrent version to go into your next commit snapshot.
+   * Commited means that the data is safely stored in your database.
+   
+   WORKING DIRECTORY
+   
+   *The working tree is a single checkout of one version of the project.
+   *These files are pulled out of the compressed datbase in the git directory and placed on disk for you to use or modify.
+   
+   
+   STAGING AREA
+   
+   *The staging area is a file, generally contained in your git directory, that stores information about what will go into your next commit . its technical name in git is " index" , but the phrase " staging area" works ust as well.
+   
+   REPOSITORY AREA
+   
+   * The git directory is where git stores the metadata and object database for your project. this is the most important part of git , and it is what is copied when you clone a repositary from anothet computer.
+   
+   
+   GIT WORKFLOW
+   
+   the basic git workflow goes somthing like this:
+   
+   1. you modify files in your working tree.
+   2.you selectively stage just those changes you want to be part your next commit , which adds only changes to the stagging area.
+   3. you do a commit , which takes the files as they are in the stagging area and stores that snapshots permanently to your git directory.
+  
+ ----------------------------------------------------------------------------------------------------------------------------------------------- 
+  
+  INSTALLING GIT 
+  
+  before start using git we need to install git in your computer.
+  
+  if it already presnt its better to upgrade git to the latest version.
+  
+  There are lot of different ways to use git.
+  
+  * Using command line tools.
+  * Using Graphical user interfaces.(here wil have some software which will automatically write code like sourcegit, tortise git etc..)
+  
+  --------------------------------------------------------------------------
+  
+       GIT COnfigaration
+       
+    * After installing git in our system.
+    * The first thing we need to do is set our username and the email address.
+    *This is because when we use git to change the files in the project . git uses this information to identify who has made the changes to the file.
+    * the command to add the user name and address is 
+     git config
+     
+     
+    Git uses a series of configuration files to determine the behaviour.
+    
+      Git has multiple levels of configuration
+      
+      1.Repository/Project level (local).
+      2.User Account (Global level).
+      3.System level (git installation).
+      
+      
+    GIT CONFIG LOCATIONS
+    
+     Local(Repository/Project level)
+     repository/.git/config
+     
+     
+    Global(User level);
+    Users/vinay/.gitconfig
+    
+    
+    System(git installation)
+    /usr/local/etc/gitconfig
+    
+    
+    *Check Complete Git Config
+    git config --list --show-origin
+
+    *Remove a specific setting for specific level of config
+    git config --global --unset user.name
+    
+    *remove the specific section
+    git config --global --remove-section user.
+    
+    git help 
+    git help -a
+    git help init
+    git help add 
+ --------------------------------------------------------------------------------------------------------  
+ 
+ 
+    git init  (will create one repository .git)
+    git add . (it will add the file )
+    git status (to check the status)
+    git commit -m(message) "initial commit"
+    git log ( to check home many commits you made)
+      
+    
+  ------------------------------------------------------------------------------------------------------------
+  
+  GIT Diff command
+  
+  *Diff command is used in git to track the difference between the changes made on a file.
+  *diff command takes two inputs and reflects the difference between them.
+  
+  
+  we know that git has three areas Working area, staging area , repository area.
+  
+  *To check the changes in the working area and the staged area 
+     
+     git diff 
+     
+    * to check the changes between the stage area and the repository area 
+     
+     git diff --staged
+     
+    * to check the changes between the working and repository
+    
+      git diff head 
+      
+      
+    ------------------------------------------------------------------------------   
+  
+     * git mv vinay.html vinay.txt (move command is used to change the name or move the file)
+     * git restore --staged vinay.txt ( to revert the changes use restore command )
+    
+  
+  -----------------------------------------------------------------------
+   
+   Git Branching
+   
+   git checkout -b (branch-name )     (to create new branch)
+   
+   git checkout master (changing branch)
+   
+   git branch -m new-master (to rename the branch)
+   
+   git branch -d new-branch (to delete branch )
+   
+    git log --oneline (to check commit status )
+    
+    (master branch ) git merge vinay-branch
+    
+  ---------------------------------------------------------------------------------------------------------
+  
+  GIY REBASE
+  
+  
+  
+  
+  
+  
+    
+ (1) GIT reflog 
+    
+   * the term reflog is a short form for reference logs.
+   * these are just logs that keeps us for as a record.
+   * git keeps a record of when the tips of branches and other references were updated in the repository.
+   * we can view and update these reflog using the git reflog command.
+    
+    Limitations
+    * git only keeps reflogs on your local machines.
+    * they are not shared with the hosted repositary.
+    * Reflog also expire . git cleanes out old entires after 90 days. though ths can be configured.
+    
+    commmands
+    *the git reflog command accepts sub-commands like Show,expire, delete and exists.
+    * show is the only command used variant , and it is the default subcommand.
+    * git reflog show command will show the log of the specific reference (it defaults to HEAD).
+    * For example , to view the logs for the tip of the main branch we could run 
+    
+    git reflog show main.
+    
+    git reflog show head.  git reflog show (branch name )
+    
+  ------------------------------------------------------------------- ----------------------------------------
+   (2) Git Cherry-pick
+   
+   * cherry pick is used if you want to apply particular commit from one branch into another branch.
+   * cherry pick is mainly used if you dont want to merge the whole branch and you wants some commits
+   * cherry pick just like rebase it is advanced concept and also powerful command.
+   * cherry-pick is a useful tool but always its not a good optio.
+   *it can cause duplicate commits.
+   * mainly cherry pick is used for the bug fixes where you want to palce that bugfix commit in all the version branch 
+   * it is also used when an accidentally made commit in the wrong branch.
+   
+   git log --oneline
+   git cherry-pick (6a6628c -hash)   
+   
+  ----------------------------------------------------------------------------------------------------------
+  
+                              
