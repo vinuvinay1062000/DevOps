@@ -649,5 +649,70 @@ pg_restore: creating TABLE "public.article_category_sites"
      .Platform as a service
      .Software as a service
  
+ ===========================================================================================================================================================================
  
  
+ youtube link = https://www.youtube.com/watch?v=rFwdniyo0CM
+ 
+ 
+                        LINUX COMMANDS
+  
+  1) mkdir = create a new directory to create files.
+  
+  2) cd  = change directory.
+  
+  3) touch = create empty files.
+  
+  4) cat>filename =  create new file and writes the content and ctrl+D to save the content in the file .
+  
+  5) cat file1 file2 > file3 = create new file and content of the both file will be copined into new file.
+  
+  6) cat = display the content of the file.
+  
+  7) ls = list the content of the directory.
+  
+  8) ls*.txt or ls*.c etc = list all the files with given extension.
+  
+  9) pwd = it will display present working directory.
+  
+  10) cp = copy a file or directory .
+  
+  11) mv = move a file or directory .
+  
+  12) head = display first 10 lines of a file .
+  
+  13) tail = display last 10 lines of file.
+  
+  14) tac = display file content lines in reverse.
+  
+  15) more = simliar to cat here we can display large content by using enter or spacebar.
+  
+  16) id = display id of user\group.
+  
+  17) clear = clear the screen.
+  
+  18) vi = text editor to write the program of text.
+  
+  19) grep = filter to search given pattern in the file content.
+  
+  20) diff = compares the content of two different files.
+  
+  21) ping = check the conectivity status of server.
+  
+  22) history = review all the commands which you have entered.
+  
+  23) hostname = display hostname.
+  
+  24) hostname-i = display host  ip 
+  
+  25) chm0d = chnage the user / group permission to access file .
+  
+  26) nl = display the line numbers 
+  
+  27) wc = given number of lines , words and characters avalible in the file content .
+  
+  28) uniq = remove duplicates of filecontent / it can remove only continuous duplicates .
+  
+  29) rmdir = removes the specified directory (directory should be empty)
+  
+  30) rm = remove file.    
