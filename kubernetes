@@ -1,0 +1,73 @@
+   you tube link = https://www.youtube.com/watch?v=l_lWfipUimk&list=PLhW3qG5bs-L8EU_Oocu6RkNPpYpaamtXX
+   
+                   Kubernetes
+     
+  * It is the greek word for helmsman or caption of ship.
+  * The logo of the k8s represents the steering of the ship.
+  * kubernetes is also refered to as k8s, as there are 8 charaters between k and s .
+  
+ ---------------------------------------------------------- 
+  1) what is k8's?
+  
+  its a container management tool or (container orchestration engine ).
+  
+  container orchestration tool means 
+  
+ * it was developed by google lab and later donated to CNCF.(cloud native computing foundation)
+ *It is a open source and written in go programing language (golang) and its also call k8's.
+ ------------------------------------------------
+ 
+ 2) what is container management tool?
+  
+ * container management tool manages containerized applications
+  
+  * container orchestration tool or engine automates deploying , scaling , and managing containerized application on a group of servers.
+  
+  example ; kubernetes , docker swarm , apache mesos marathon ,etc..
+  
+  * manges containerized application means ;
+    deploying
+    scheduling
+    scaling
+    load balancing.
+    
+  3) what are containerized applications ?
+  
+  example docker
+   *  docker is a tool designed to make it easier to deploy and run applications by using containers.
+   *  containers allow a developer to packages up an application with all of the parts needs such as libraries and other dependencies and ship it all out as one package.
+   
+   
+   let's now see where does kubernetes comes into picture.  
+   
+   organizations have to use multiples containers to 
+     * ensure avalibility 
+     * load balancing
+     * scale up and down based on user load.
+     
+   if we want to take care of all the process manually its very difficult ,
+     
+     deploying.
+     scheduling 
+     scaling
+     load balancing
+     batch execution.
+     rollbacks
+     monitoring.
+     
+     so , kubernetes will take care this process automaticly.
+     
+     * docker will create the container
+     * kubernetes will manages the container.
+     
+     features of kubernetes 
+  * Automatic bin packing .
+  * Service discovery and load balancing.
+  * Storage orchestration
+  * self-healing.
+  * Automated rollouts & rollbacks.
+  * secret & configuration management.
+  * Batch execution.
+  * Horizontal scaling.
+      
+     

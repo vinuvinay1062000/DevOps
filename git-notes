@@ -282,5 +282,38 @@
    git cherry-pick (6a6628c -hash)   
    
   ----------------------------------------------------------------------------------------------------------
+  3) git stash 
   
+  sometimes you want to switch the branches, but you are looking on an incomplete part of your current project.
+  
+  you dont wangt to make a commit of half-done work.
+  
+  git stashing allows you to do so.
+  
+  normally when you switch branch you will commit the code and switch to new branch.
+  
+  if you switch branch without committing .
+  
+    Two things will happen
+    
+   1. switches to the branch carrying the changes.
+   2.git will not allow to switch the branch and asks to commit or stach the changes.
+   
+   * The git stash command enables you to switch branches without commiting the current brnach.
+   
+   The stach's meaning is " store something safely in a hidden place." the scence in git is also the same for stach ; git temporarily saves your data safely without commiting .
+  
+  to stash use command
+  
+  * git stash
+  * git stash list
+  
+  to return back use 
+  
+  * git stash pop 
+  
+  if you want to add custom name use this command
+  
+  * git stash save " modified files "
+  ---------------------------------------------------------------------------------------------------------------------------------------------------
                               
