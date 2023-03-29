@@ -15,12 +15,12 @@
   
  * it was developed by google lab and later donated to CNCF.(cloud native computing foundation)
  *It is a open source and written in go programing language (golang) and its also call k8's.
+ 
  ------------------------------------------------
  
  2) what is container management tool?
   
- * container management tool manages containerized applications
-  
+   * container management tool manages containerized applications
   * container orchestration tool or engine automates deploying , scaling , and managing containerized application on a group of servers.
   
   example ; kubernetes , docker swarm , apache mesos marathon ,etc..
@@ -69,5 +69,154 @@
   * secret & configuration management.
   * Batch execution.
   * Horizontal scaling.
+  ------------------------------------------------------------------------------------------------------------
+  
+  Archiecture of kubernetes 
+  
+  * when you deploy kubernetes, you will get cluster
+  * A cluster is a set of machines , called nodes.
+  * A cluster has atleast one worker node and atlest one master node.
+  * In earlier days of kubernetes, worker nodes were called minions.
+  * In kubernetes, every cluster has at least one master node and at least one worker node.
+  * There can be more than one master nodes in a cluster to provide a cluster with failover and high avalibility.
+  * There can be multiple cluster in kubernetes architecture.
+  
+  ---------------------------------------------
+  
+  NODES and PODs
+  
+   A node can be Physical machine 
+                 Virtual machine 
+                 vm on cloud
+                 
+        
+     in side a node we have pods they can be one or multiple in nodes and inside the pods we have container  they can be one or multiple .
+     
+     *Ther worker node host the pods that are the components of the application .
+    * The master node manages the worker nodes and the pods in the cluster.
+    
+    ------------------------------------
+    
+    Master node
+    
+    * Responsible for managing the cluster.
+    * Monitors nodes and pods in a cluster.
+    * When a node fails , moves the workload of the failed node to another worker node.
+    
+    
+    4 components of master nodes.
+    
+    1) Api server          = for all communications ( JSON over HTTP API)
+    2) Scheduler           = schedules pods on nodes.
+    3) Controller manager  = runs controllers
+    4) Etcd                = open source, distributed key-value datbase from core OS.
+    
+             
+   API-server 
+     
+      * APi allow applications to communicate with one another 
+      * it is the front-end for the kubernetes control plane.
+      * Exposes Api for almost every operation.
+      * The users, management devices, and command line iterfaces all talk to the api server to interact with the kubernetes cluster.
+      * Exposes Api alomost every operation.
+      * users interact with the api using a tool called kubectl.
+      * kubectl is the command line utility to interact with kubernetes api.
+      * kubectl is a Go language binary.
+      
+ -----------------------------------------------------------------------------------------------------------------  
+      
+   Scheduler 
+   
+     * Schedules pods across multiple nodes.
+     * Component on the master that watches newly created pods that have no node assigned, and selects a node for them to run on 
+     * The schedular obtains from etcd , via the API server , resource usage data for each worker node in the cluster .
+      
+  ------------------------------------------------------------------------------------------------------------------- 
+     
+   Control manager
+   
+     This is component on the master that runs controllers 
+      Kube-controller-manager
+      cloud-controller-manager
+      
+     
+     * The Kube-controller-manager runs controllers responsibe to act when nodes become unavilble , to ensure pos counts are as expected, to create end points, service accounts, and Api access tokens.
+     
+     * The Cloud-controller-manager runs controllers responsible to interact with the underlying infrastructure of a cloud provider when nodes become unavailable, to manage storge volumes when provided by a cloud service , and to manage load balancingand routing.
+     
+   
+   This are the different types of kube-controller- manager
+     Node controller
+     Replication controller
+     Endpoints controller
+     service accoun and token controller.
+     
+     
+   Respomnsible for overall health of the cluster
+   * Ensures node are running all the time
+   * Correct no of pods are running as per spec file
+    
+    Logically, each controller is seperate process , but to reduce complexity, they are all compiled into a single binary and run in a single process.
+    
+    
+    Node controller 
+      - responsible for noticing and responding when nodes go down.
+      
+    Replication controller
+       -responsible fo maintaining the correct number of pods for every replication controller object in the system .
+       
+    Endpoints controller
+       - populates the endpoints object ( that is , joins services & pods ).
+       
+    Service account and token controllers
+      -create default accounts and api access tokens for new namespaces.
+      
+      
+     Controller run and watch-loops continuously to compare cluster's desired state ( from configuration ) to its current state (obtained from etcd data store via the API server)
+     In case of a mismatch corrective actin is taken in the cluster until its current state the desired state.
+     
+     
+  Cloud-controller-manager
+   
+     Node Controller
+       -For checking the cloud provider to determine if a node has been deleted in the cloud after if stops responding.
+       
+      Route Controller
+        - for setting up routes in the underlying cloud infrastructure .
+        
+       Service Controller 
+          - For creating , updating and deleting cloud provode load balancers.
+          
+      volume controller
+        - For creating , attaching, and mounting volumes , and interacting with cloud provider to orchestrate volumes.
+        
+        
+      you can disable the controller loops by setting the cloud-provider flag to external when starting the kube-controller-manager
+      
+  ----------------------------------------------------------------------------------------------------------------------------------
+  
+   Etcd
+   
+     * open source, distributed key-value databse from coreOS
+     * Consistent and highly-available key value store used as kubernetes' backing store for all cluster data
+     * single source of truth for all components of the kubernetes cluster.
+     
+     Out of all the master components, only the api server is able to communicate with the etcd data store.
+     etcd can be part of the kubernetes master or it can be configured externally .
+     
+  -----------------------------------------------------------------
+  
+      Worker node
+      
+      can be    
+ 
+       
+     
+       
+      
+      
+       
+      
+  
       
      
