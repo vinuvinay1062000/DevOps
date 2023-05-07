@@ -1,0 +1,93 @@
+  Ruby IDE (integrated development environment)
+  
+  rubymine
+  vs code (visual studio)
+  atom
+  sublime text
+  eclipse
+  
+ ------------------------------------------------------------------------------------------------------------- 
+  
+  puts "hello world"   output is  hello world
+  
+  p "hello world"    output  is "hello world "
+  
+  print "hello world"  output is hello world  it does't move to the next line
+  
+  
+--------------------------------------------------------------------------------------------------------------
+
+   COMMENTS
+    
+  single line comments 
+  
+     example:  # hello vinay
+  
+  
+  multi line comments
+     
+     example: =begin
+              print "hello world"
+              p " ello world" 
+              hello vinay
+              =end
+              
+   ------------------------------------------------------------------------------------------------------------           
+    
+     VARIABLES
+     
+     1) string
+         example :   myname = "vinay" 
+                     puts myname 
+                     
+                     output: vinay
+       
+       
+     2) number
+          example : mynumber = 123123
+                    puts mynumber
+                    
+                    output: 123123
+                    
+     3) boolean
+           example : myboolean = true
+                     puts myboolean
+                     
+                     output: true
+                     
+  -------------------------------------------------------------------------------------------------------------------                  
+   STRING 
+    
+    1.Multiline
+    2.Interpolation
+    3.Length
+    4.Upcase
+    5.Downcase
+    6.Reverse
+    7.Include
+    8.Concatenation
+    9.Freezing
+    10.Comparision
+    
+    
+    Multiline
+      
+      puts "hello all"                              o/p: hello all
+               
+      puts 'hello all'                              o/p: hello all
+      
+      msg = "Hello from Automation step by step"
+      
+      puts msg                                      o/p: hello from automation step by step
+                                            
+    puts msg ["hello"]                              o/p: hello 
+    puts msg ["ruby "]
+    
+    puts msg[0]
+    puts msg[0,4]
+    puts msg[0..20]
+    puts msg[0,msg.length]
+    puts msg[-4]
+    puts msg.length
+      
+    
